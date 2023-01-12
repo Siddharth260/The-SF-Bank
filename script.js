@@ -4,7 +4,7 @@ function sendMoney(){
    var enterName = document.getElementById("enterName").value;
    var enterAmount = parseInt(document.getElementById("enterAmount").value);
 
-   if (enterAmount > 500000) {
+   if (enterAmount > 100000) {
       alert("Insufficient Balance.")
    } else {
       var findUserBankAccount = enterName + "Balance";
@@ -13,11 +13,11 @@ function sendMoney(){
       document.getElementById("myAccountBalance").innerText = myAccountBalance
       document.getElementById(findUserBankAccount).innerHTML = finalAmount;
       alert(`Transaction Successful !!  
-      ${enterAmount} ₹ sent to ${enterName}`)
+      ${enterAmount} $ sent to ${enterName}`)
 
       // transaction history 
       var createPTag = document.createElement("li");
-      var textNode = document.createTextNode(`${enterAmount} ₹ Transferred Successfully to ${enterName} on ${Date()}.`);
+      var textNode = document.createTextNode(`${enterAmount} $ Transferred Successfully to ${enterName} on ${Date()}.`);
       createPTag.appendChild(textNode);
       var element = document.getElementById("transaction-history-body");
       element.insertBefore(createPTag, element.firstChild);
